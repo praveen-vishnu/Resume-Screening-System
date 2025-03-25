@@ -1,4 +1,6 @@
 import React from 'react';
+import withDataFetching from '../../HOCs/withDataFetching';
+import { getJobs } from '../../services/apiService';
 
 interface Job {
   id: number;
@@ -8,10 +10,10 @@ interface Job {
 }
 
 interface JobListProps {
-  jobs: Job[];
+  data: Job[];
 }
 
-const JobList: React.FC<JobListProps> = ({ jobs }) => {
+const JobList: React.FC<JobListProps> = ({ data: jobs }) => {
   return (
     <div className="job-list">
       <h2>Available Job Descriptions</h2>
@@ -28,4 +30,4 @@ const JobList: React.FC<JobListProps> = ({ jobs }) => {
   );
 };
 
-export default JobList;
+export default withDataFetching(JobList, getJobs);
