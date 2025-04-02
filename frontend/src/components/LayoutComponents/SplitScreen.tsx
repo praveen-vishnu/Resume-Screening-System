@@ -14,35 +14,37 @@ interface SplitScreenProps {
 const SplitScreen: React.FC<SplitScreenProps> = ({
 	// left,
 	// right,
-	leftWidth = '20%',
-	rightWidth = '80%',
+	leftWidth = "20%",
+	rightWidth = "80%",
 	main,
 	mainWidth = "100%",
 }) => {
 	return (
-		<div className="layout-container">
-			{/* Header */}
-			<Header />
+		<div className="container layout-container">
+			<main className="main-content">
+				{/* Header */}
+				<Header />
 
-			{/* Main Content */}
-			<div className="split-screen">
-				{/* Sidebar (Left Section) */}
-				<div className="left-pane" style={{ width: leftWidth }}>
-					<Sidebar />
-				</div>
+				{/* Main Content */}
+				<div className="split-screen">
+					{/* Sidebar (Left Section) */}
+					<div className="left-pane" style={{ width: leftWidth }}>
+						<Sidebar />
+					</div>
 
-				{/* Main Content (Right Section) */}
-				<div className="right-pane" style={{ width: rightWidth }}>
-					<div className="content-container">
-						{/* {left}
+					{/* Main Content (Right Section) */}
+					<div className="right-pane" style={{ width: rightWidth }}>
+						<div className="content-container">
+							{/* {left}
 						{right} */}
-            {main}
+							{main}
+						</div>
 					</div>
 				</div>
-			</div>
 
-			{/* Footer */}
-			<Footer />
+				{/* Footer */}
+				<Footer />
+			</main>
 		</div>
 	);
 };
