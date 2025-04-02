@@ -3,7 +3,7 @@ import React from 'react';
 interface Resume {
   id: number;
   candidate_name: string;
-  candidate_email: string;
+  email: string;
   ai_score: number;
 }
 
@@ -19,7 +19,7 @@ const ResumeList: React.FC<ResumeListProps> = ({ resumes }) => {
         {resumes.map((resume) => (
           <li key={resume.id}>
             <h3>{resume.candidate_name}</h3>
-            <p>Email: {resume.candidate_email}</p>
+            <p>Email: {resume.email}</p>
             <p>AI Score: <strong>{resume.ai_score}</strong></p>
           </li>
         ))}

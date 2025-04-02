@@ -22,7 +22,9 @@ const JobList: React.FC<JobListProps> = ({ data: jobs }) => {
           <li key={job.id}>
             <h3>{job.title}</h3>
             <p>{job.description}</p>
-            <p><strong>Skills:</strong> {job.skills.join(', ')}</p>
+            <p>
+              <strong>Skills:</strong> {job.skills ? job.skills : 'N/A'}
+            </p>
           </li>
         ))}
       </ul>
